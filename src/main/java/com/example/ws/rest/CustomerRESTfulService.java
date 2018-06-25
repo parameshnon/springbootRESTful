@@ -21,6 +21,7 @@ import com.example.model.Customer;
 import com.example.service.CustomerServiceIF;
 
 @RestController
+
 @RequestMapping(value="/customer")
 public class CustomerRESTfulService {
 	private static final Logger logger=LoggerFactory.getLogger(CustomerRESTfulService.class);
