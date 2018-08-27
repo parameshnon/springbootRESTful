@@ -5,10 +5,8 @@
  */
 package io.swagger.client.api
 
-import java.util.Date
 import io.swagger.client.model.Errors
 import io.swagger.client.model.Member
-import io.swagger.client.model.Members
 import io.swagger.client.core._
 import io.swagger.client.core.CollectionFormats._
 import io.swagger.client.core.ApiKeyLocations._
@@ -19,22 +17,13 @@ object DefaultApi {
    * to retrieve the list of Members
    * 
    * Expected answers:
-   *   code 200 : Members (list of Members)
+   *   code 200 : Seq[Any] (list of Members)
    *   code 400 :  (member does not exists)
    *   code 500 :  (internal server erro)
-   * 
-   * @param fetchsize size of the page
-   * @param pageno 
-   * @param startdate start date of fetch
-   * @param enddate enddate of fetch
    */
-  def membersGet(fetchsize: Int, pageno: Int, startdate: Date, enddate: Date): ApiRequest[Members] =
-    ApiRequest[Members](ApiMethods.GET, "https://virtserver.swaggerhub.com/parameshnon/member/1.0.0", "/members", "application/json")
-      .withQueryParam("fetchsize", fetchsize)
-      .withQueryParam("pageno", pageno)
-      .withQueryParam("startdate", startdate)
-      .withQueryParam("enddate", enddate)
-      .withSuccessResponse[Members](200)
+  def membersGet(): ApiRequest[Seq[Any]] =
+    ApiRequest[Seq[Any]](ApiMethods.GET, "https://virtserver.swaggerhub.com/parameshnon/member/1.0.0", "/members", "application/json")
+      .withSuccessResponse[Seq[Any]](200)
       .withErrorResponse[Unit](400)
       .withErrorResponse[Unit](500)
         /**

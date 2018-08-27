@@ -73,8 +73,8 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Errors](Errors.md)
+ - [InlineResponse200](InlineResponse200.md)
  - [Member](Member.md)
- - [Members](Members.md)
 
 
 ## Documentation for Authorization
